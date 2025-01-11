@@ -16,3 +16,8 @@ With the transport to the new page decided the next job was desiging it. I follo
 the final stage at that moment of time was to make all of the relavent links work and for order for them to i had to decide on where the would take the user and i thought it would be a good idea for it to take them to the relavent pages of GOV.UK as that would allow the user to do things such as renew their license since things like that are not possible from my website.
 I only dis this for the links related to driving however as I had set out with this as the main aspect my website to be that.
 so after I had made the links take the user to the correct GOV.UK page for each one i had accomplished all my must have goals and some of my optional ones aswell and it was time to begin the final stage of user testing
+
+the first person I had test my website was jack daniels and from that he said that the website was very user friendly but advised me to make it known that some of the features that I had not finished say coming soon to let the user know they are not complete.
+the next people i got to test my website were my parents who i thought would off a good change in perspective as they have been driving for years.
+they were able to navigate around my website with almost no issues.
+they said a different colour could possibly be used to make the front of the website stand out more.
