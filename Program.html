@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Services - Modern Portal</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #c5c3c3;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3799 0%, #0c2461 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .search-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .service-card__icon {
+            background: #f0f4ff;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            background: #1e3799;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background: #0c2461;
+        }
+
+        .button--secondary {
+            background: transparent;
+            border: 2px solid #1e3799;
+            color: #1e3799;
+        }
+
+        .button--secondary:hover {
+            background: #f0f4ff;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1e3799;
+            margin-bottom: 1rem;
+        }
+
+        .service-card__title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1e3799;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-list a {
+            color: #1e3799;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #e1e1e1;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: #666;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #1e3799;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .tips-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .tips-list {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="/" class="header__logo">GOV.UK</a>
+            <button class="button button--secondary">Sign in</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="search-section">
+            <h1 class="section-title">Search Wikipedia</h1>
+            <p>Quick access to Wikipedia articles directly from our portal.</p>
+            <form class="search-box" onsubmit="handleSearch(event)">
+                <input type="search" class="search-input" placeholder="Search Wikipedia" id="searchInput">
+                <button type="submit" class="button">Search Wikipedia</button>
+            </form>
+        </section>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card__icon">🚗</div>
+                <h2 class="service-card__title">Driving & Vehicles</h2>
+                <p>Access all DVLA services including licences, vehicle tax, and MOT.</p>
+                <ul class="service-list">
+                    <li><a href="https://www.gov.uk/apply-first-provisional-driving-licence">Apply for provisional licence</a></li>
+                    <li><a href="https://www.gov.uk/renew-driving-licence">Renew your driving licence</a></li>
+                    <li><a href="https://www.gov.uk/vehicle-tax">Vehicle tax and MOT</a></li>
+                    <li><a href="https://www.gov.uk/change-name-driving-licence">Update your personal details</a></li>
+                </ul>
+                <a href="#driving-services" class="button" style="margin-top: 1rem; width: 100%;">View all driving services</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card__icon">🏥</div>
+                <h2 class="service-card__title">Health & Care (coming soon)</h2>
+                <p>Access NHS services, book appointments, and find health information.</p>
+                <ul class="service-list">
+                    <li><a href="#">Book a GP appointment</a></li>
+                    <li><a href="#">Order prescriptions</a></li>
+                    <li><a href="#">Find NHS services</a></li>
+                    <li><a href="#">Mental health support</a></li>
+                </ul>
+                <a href="#" class="button" style="margin-top: 1rem; width: 100%;">View all health services</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card__icon">💼</div>
+                <h2 class="service-card__title">Benefits & Work (coming soon)</h2>
+                <p>Find jobs, apply for benefits, and access career support.</p>
+                <ul class="service-list">
+                    <li><a href="#">Universal Credit</a></li>
+                    <li><a href="#">Job search</a></li>
+                    <li><a href="#">Career advice</a></li>
+                    <li><a href="#">Pension services</a></li>
+                </ul>
+                <a href="#" class="button" style="margin-top: 1rem; width: 100%;">View all work services</a>
+            </div>
+        </div>
+
+        <!-- Driving Services Section -->
+        <section id="driving-services" class="search-section" style="margin-top: 4rem;">
+            <div class="breadcrumb">
+                <a href="#top">Home</a> > Driving Services
+            </div>
+
+            <h1 class="section-title">Driving & Vehicle Services</h1>
+            <p>Complete list of DVLA services and driving licence options</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card__icon">🎓</div>
+                    <h2 class="service-card__title">Learning to Drive</h2>
+                    <ul class="service-list">
+                        <li><a href="https://www.gov.uk/apply-first-provisional-driving-licence">Apply for provisional licence</a></li>
+                        <li><a href="https://www.gov.uk/find-driving-schools-and-lessons">Find driving instructors</a></li>
+                        <li><a href="https://www.gov.uk/book-theory-test">Book theory test</a></li>
+                        <li><a href="https://www.gov.uk/book-driving-test">Book practical test</a></li>
+                        <li><a href="https://www.gov.uk/track-your-driving-licence-application">Track your application</a></li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__icon">📄</div>
+                    <h2 class="service-card__title">Licence Management</h2>
+                    <ul class="service-list">
+                        <li><a href="https://www.gov.uk/renew-driving-licence">Renew your licence</a></li>
+                        <li><a href="https://www.gov.uk/replace-a-driving-licence">Replace a lost licence</a></li>
+                        <li><a href="https://www.gov.uk/renew-photo-driving-licence">Update your photo</a></li>
+                        <li><a href="https://www.gov.uk/change-address-driving-licence">Change your address</a></li>
+                        <li><a href="https://www.gov.uk/adding-higher-categories-to-your-driving-licence">Add categories</a></li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__icon">🚙</div>
+                    <h2 class="service-card__title">Vehicle Services</h2>
+                    <ul class="service-list">
+                        <li><a href="https://www.gov.uk/vehicle-tax">Tax your vehicle</a></li>
+                        <li><a href="https://www.gov.uk/getting-an-mot">Book MOT</a></li>
+                        <li><a href="https://www.gov.uk/vehicle-registration">Register a vehicle</a></li>
+                        <li><a href="https://www.gov.uk/sold-bought-vehicle">Transfer vehicle ownership</a></li>
+                        <li><a href="https://www.gov.uk/check-mot-history">Check vehicle history</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="tips-section">
+                <h2 class="section-title">Tips for New Drivers</h2>
+                <ul class="tips-list">
+                    <li><strong>Practice regularly:</strong> Try to practice in different conditions and environments, quiet roads, busy streets, and various weather conditions.</li>
+                    <li><strong>Learn the Highway Code:</strong> Thoroughly understand road signs, rules, and regulations before taking your theory test.</li>
+                    <li><strong>Insurance considerations:</strong> Research different insurance options and consider black box insurance for potentially lower premiums.</li>
+                    <li><strong>Maintenance awareness:</strong> Learn basic vehicle maintenance like checking tire pressure, oil levels, and understanding warning lights.</li>
+                    <li><strong>Confidence building:</strong> Start with shorter journeys and gradually build up to longer trips and more challenging routes.</li>
+                    <li><strong>Safety first:</strong> Always maintain safe distances, check mirrors regularly, and avoid distractions while driving.</li>
+                    <li><strong>P plates:</strong> Consider using P plates after passing your test to let other drivers know you're a new driver.</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p>All content is available under the Open Government Licence v3.0, except where otherwise stated</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSearch(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm.trim()) {
+                const wikipediaURL = `https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(searchTerm)}`;
+                window.location.href = wikipediaURL;
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
