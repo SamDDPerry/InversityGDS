@@ -21,3 +21,6 @@ the first person I had test my website was jack daniels and from that he said th
 the next people i got to test my website were my parents who i thought would off a good change in perspective as they have been driving for years.
 they were able to navigate around my website with almost no issues.
 they said a different colour could possibly be used to make the front of the website stand out more.
+the final user i tested was my friend who is currently lesrning to drive and had formally complained about the website claiming it was boring
+he comented on my website saying that he thought that it was much easier to navigate than the original website and that it was much more informative aswell
+when asked if there was anything negative with the website that he would change to do with the presentation and design of it he said no, this was the most important part of my research i believe as it was the closest thing to a proper user i had and so when he was able to navigate it without any issue it showed that my website was in a good spot
