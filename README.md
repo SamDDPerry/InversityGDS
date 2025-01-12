@@ -24,3 +24,7 @@ they said a different colour could possibly be used to make the front of the web
 the final user i tested was my friend who is currently lesrning to drive and had formally complained about the website claiming it was boring
 he comented on my website saying that he thought that it was much easier to navigate than the original website and that it was much more informative aswell
 when asked if there was anything negative with the website that he would change to do with the presentation and design of it he said no, this was the most important part of my research i believe as it was the closest thing to a proper user i had and so when he was able to navigate it without any issue it showed that my website was in a good spot
+
+the final change i made to my website was in response to my parents saying that the front needs to stand out more.
+the way i fixed this issue was by making the background of the website a darker shade of grey which in tuern made the whiteness of the boxes with information stand out much more.
+i then got my parents opinions on the new changes and they claimed that it helped the core most important parts of the website stand out much more accomplishing my main goal of making the website easy to use
